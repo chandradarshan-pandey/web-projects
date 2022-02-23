@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Page Form Validation</title>
+	<script type="text/javascript">
+		
+		function checkFormData(){
+			var message = "";
+
+			//Acess text box content
+			var tname = document.getElementById("txtname").value;
+			var temail = document.getElementById("txtemail").value;
+			var tage = document.getElementById("txtage").value;
+
+			//Acess radio button value
+			var tgender1 = document.getElementById('radiotick1').checked;
+			var tgender2 = document.getElementById('radiotick2').checked;
+
+			//Acess checkbox for terms & condition
+			var tchkbox = document.getElementById('agreetick').checked;
+
+			message += "Name: " + tname + "<br>";
+			message += "Email: " + temail + "<br>";
+			message += "Age: " + tage + "<br>";
+			message += "Male: " + tgender1 + "<br>";
+			message += "Female: " + tgender2 + "<br>";
+			message += "Agreed: " + tchkbox + "<br>";
+
+			document.getElementById("tmessage").innerHTML = message;
+		}
+
+
+	</script>
+		
+</head>
+<body>
+	<p id="tmessage"></p>
+	<h1>Form Validation</h1>
+
+	<form action="#" method="get">
+		Your Name: <input type="text" name="name" id="txtname"><br><br><br>
+		Your Email: <input type="text" name="email" id="txtemail"><br><br><br>
+		Your Age: <input type="text" name="age" id="txtage"><br><br><br>
+
+		Male: <input type="radio" name="gender" id="radiotick1" checked="checked">
+		female: <input type="radio" name="gender" id="radiotick2"><br><br><br>
+
+		<input type="checkbox" id="agreetick"> Agree to our Terms & Condition.
+		<br><br><br>
+		
+		<input type="submit" name="submitbtn" value="submit" onclick="checkFormData();">
+
+
+	</form>
+	
+
+
+</body>
+</html>
